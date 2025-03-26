@@ -24,6 +24,9 @@
   grid-template-columns: 1fr 2fr;
   grid-column: 1/3;
 }
+.footer {
+  grid-column: 1/3;
+}
 .menu ul {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -38,15 +41,15 @@
 .sidebar {
   background-color: #c50208;
   grid-row: 2 / 4;
+  grid-column: 1/2;
   display: grid;
   gap: 50px;
 }
+
 .side-content,
 .photo {
-  display: flex;
+  display: grid;
   align-items: center;
-  justify-content: center;
-  height: 40px;
 }
 
 .sidebar .photo {
@@ -67,6 +70,11 @@
 .nav {
   background-color: #c50208;
 }
+.nav ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  list-style-type: none;
+}
 
 .nav ul li {
   font-size: 16px;
@@ -75,6 +83,16 @@
 
 .article {
   background-color: #bccbde;
+}
+
+/* - The article element should set grid columns using `repeat` along with the `auto-fit` and `minmax` properties
+- The article columns should have a minimum value of 250px and a maximum of 1fr unit
+- The article element has a gap of 15px
+ */
+.article {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
 }
 
 .article p {
@@ -88,6 +106,7 @@
   background-color: #ffffff;
   color: black;
   text-align: center;
+  height: 200px;
 }
 
 .card p {
